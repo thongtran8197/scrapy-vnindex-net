@@ -34,3 +34,13 @@ class VnIndexDataChinaSpiderPipeline:
             row = [item["date"], item["price"]]
             writer.writerow(row)
         return item
+
+class VnBizDataSpiderPipeline:
+    def process_item(self, item, spider):
+        prefix_folder = "output/vnbiz/vi_mo/"
+        filename = prefix_folder + item["file_name"]
+        with open(filename, "a") as f:
+            writer = csv.writer(f)
+            row = [item["date"], item["value"], item["unit"]]
+            writer.writerow(row)
+        return item

@@ -1,0 +1,9 @@
+Server: nginx
+Date: Fri, 04 Aug 2023 15:28:34 GMT
+Content-Type: text/html; charset=utf-8
+X-Nextjs-Cache: STALE
+X-Powered-By: Next.js
+Etag: "16xnxq2o99r3ye21"
+Cache-Control: s-maxage=300, stale-while-revalidate
+Vary: Accept-Encoding
+Content-Encoding: gzip

@@ -16,3 +16,10 @@ class VnIndexDataItem(Item):
     price = Field()
     unit = Field()
     file_name = Field()
+
+
+class VnBizItem(Item):
+    date = Field()
+    unit = Field()
+    value = Field()
+    file_name = Field()
