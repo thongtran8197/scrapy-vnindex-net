@@ -27,16 +27,17 @@ class VnBizSpider(scrapy.Spider):
         prefix_file_name = self.convert_vietnamese(data.get("name", "")).replace(" ", "_")
         series = data.get("series", [])
         for v in series:
-            unit = v.get("unit")
+            unit = self.convert_vietnamese(v.get("unit"))
             end_fix_file_name = self.convert_vietnamese(v.get("name", "")).replace(" ", "_")
             file_name = prefix_file_name + "_" + end_fix_file_name
             charts_data = v.get("data", [])
             for chart_data in charts_data:
                 data_item = VnBizItem(
-                    date=time.strftime('%d-%m-%Y', time.gmtime(chart_data[0]/1000)),
+                    date=time.strftime('%m/%d/%Y', time.gmtime(chart_data[0]/1000)),
                     unit=unit,
                     value=chart_data[1] if chart_data[1] is not None else "",
                     file_name=file_name,
+                    title=end_fix_file_name,
                 )
                 yield data_item
 

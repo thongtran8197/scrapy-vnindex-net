@@ -23,3 +23,22 @@ class VnBizItem(Item):
     unit = Field()
     value = Field()
     file_name = Field()
+    title = Field()
+
+
+class FinnTradeItem(Item):
+    date = Field()
+    ticker = Field()
+    value = Field()
+    file_name = Field()
+
+
+class StockPriceItem(Item):
+    date = Field()
+    ticker = Field()
+    open = Field()
+    close = Field()
+    high = Field()
+    low = Field()
+    total_match_volume = Field()
+    file_name = Field()
